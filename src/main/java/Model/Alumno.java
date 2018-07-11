@@ -1,4 +1,4 @@
-package Complejox.TP_Arena;
+package Model;
 
 import java.util.List;
 

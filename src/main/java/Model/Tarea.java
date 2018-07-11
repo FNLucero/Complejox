@@ -1,4 +1,4 @@
-package Complejox.TP_Arena;
+package Model;
 
 public class Tarea {
  public String nombre;

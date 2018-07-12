@@ -1,15 +1,32 @@
 package Model;
 
-import java.util.List;
-
 public class Asignacion {
-	
-	public Tarea tarea;
-	public List<Integer> notas;
-	//ahora lo deje como una lista de integer, pero esto va a terminar siendo otra cosa
-	
-	public Asignacion(Tarea tarea) {
-		this.tarea = tarea;
+
+	private Tarea tipoTarea;
+	private boolean estaAprobado;
+	private boolean estado; // corregido = true, pendiente = false
+
+	public Asignacion(Tarea tipoTarea) {
+		this.tipoTarea = tipoTarea;
+		estado = false;
+		estaAprobado = false;
 	}
-	
+
+	public void corregir(String concepto) {
+		estado = true;
+		estaAprobado = tipoTarea.getNota().estaAprobada(Conceptos.valueOf(concepto).ordinal());
+	}
+
+	public void corregir(int nota) {
+		estado = true;
+		estaAprobado = tipoTarea.getNota().estaAprobada(nota);
+	}
+
+	public boolean getEstado() {
+		return estado;
+	}
+
+	public boolean getEstaAprobado() {
+		return estaAprobado;
+	}
 }

@@ -1,2 +1,2 @@
 # Complejox
-Solo somos personas excluidas de simples
+Solo somos personas excluidas de simplex

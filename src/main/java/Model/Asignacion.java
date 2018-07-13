@@ -14,12 +14,12 @@ public class Asignacion {
 
 	public void corregir(String concepto) {
 		estado = true;
-		estaAprobado = tipoTarea.getNota().estaAprobada(Conceptos.valueOf(concepto).ordinal());
+		estaAprobado = tipoTarea.getNota().estaAprobada();
 	}
 
 	public void corregir(int nota) {
 		estado = true;
-		estaAprobado = tipoTarea.getNota().estaAprobada(nota);
+		estaAprobado = tipoTarea.getNota().estaAprobada();
 	}
 
 	public boolean getEstado() {

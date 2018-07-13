@@ -50,8 +50,6 @@ public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	    new TextBox(panelArriba).setWidth(150)
 	    						.bindValueToProperty("alumno.github_user");
 		
-		
-		
 	}
 	
 }

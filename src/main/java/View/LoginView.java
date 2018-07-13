@@ -1,15 +1,21 @@
 package View;
 
 import org.uqbar.arena.widgets.Panel;
+import org.uqbar.arena.widgets.Selector;
 import org.uqbar.arena.windows.SimpleWindow;
+//import org.uqbar.arena.
 import org.uqbar.arena.windows.WindowOwner;
+import org.uqbar.lacar.ui.model.ListBuilder;
+import org.uqbar.lacar.ui.model.bindings.Binding;
 
 import Model.Alumno;
 
 import org.uqbar.arena.widgets.Label;
+import org.uqbar.arena.bindings.ObservableProperty;
 import org.uqbar.arena.widgets.CheckBox;
 
 import ViewModel.LoginViewModel;
+import Model.*;
 
 public class LoginView extends SimpleWindow<LoginViewModel>{
 	  public LoginView(WindowOwner owner) {
@@ -29,8 +35,14 @@ public class LoginView extends SimpleWindow<LoginViewModel>{
 		new Label(mainPanel).setText("                ");
 		new Label(mainPanel).setText("                ");
 		
-		CheckBox Profesor = new CheckBox(mainPanel).
-				;
+		Selector<Alumno> selector = new Selector<Alumno>(mainPanel);		
+		//selector.bindValueToProperty("seleccionado");
+		
+		
+		/*
+		Binding<Estudiante, Selector<Estudiante>, ListBuilder<Estudiante>> bindingItems = 
+				selector.bindItems(new ObservableProperty<Estudiante>(this.getModelObject(), "estudiantes"));
+		*/
 		//checkResumen.bindEnabledToProperty("habilitaResumenCuenta");
 		//checkResumen.bindValueToProperty("recibeResumenCuenta");
 	

@@ -18,30 +18,19 @@ public class DatosEstudiante {
 	private void cargarAlumnos() {
 		
 		Alumno ricardo = new Alumno("richard rodriguez",2585,"ricardito2582");
-		
+		NotaNumerica nota = null;
+		nota.setResultado(8);
 		Tarea parcial=new Tarea();
 		parcial.setNombre("Parcial");
-		parcial.setNota();
+		parcial.setNota(nota);
 		
+		Asignacion evaluacion=new Asignacion(parcial);
 		
-		Asignacion evaluacion=new Asignacion();
-		
-		/*
-		bruno.evaluarlo(new Asignacion(Tarea.HISTORIA), NotaConceptual.MB);
-		bruno.evaluarlo(new Asignacion(Tarea.HISTORIA), NotaConceptual.B);
-		bruno.evaluarlo(new Asignacion(Tarea.HISTORIA), new NotaNumerica(8.0));
-		bruno.evaluarlo(new Asignacion(Tarea.LENGUA), new NotaNumerica(8.74));
-		bruno.evaluarlo(new Asignacion(Tarea.LENGUA), new NotaNumerica(9.1));*/
+	
 		
 		Alumno miguel = new Alumno("miguel Richardson", 8525, "elMIGUELON");
-		/*rodrigo.evaluarlo(new Asignacion(Tarea.MATEMATICA), new NotaNumerica(9.6));
-		rodrigo.evaluarlo(new Asignacion(Tarea.MATEMATICA), new NotaNumerica(10.0));
-		rodrigo.evaluarlo(new Asignacion(Tarea.MATEMATICA), NotaConceptual.B_mas);*/
-
-		/*
-		estudiantes.add(bruno);
-		estudiantes.add(rodrigo);
-		estudiantes.add(nicolas);*/
+		
+		alumnos.add(ricardo);
 	}
 	
 	public static DatosEstudiante getInstancia() {

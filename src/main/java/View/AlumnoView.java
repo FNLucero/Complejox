@@ -1,19 +1,26 @@
 package View;
 
+import java.util.List;
+
 import org.uqbar.arena.layout.ColumnLayout;
+import org.uqbar.arena.widgets.CheckBox;
 import org.uqbar.arena.widgets.Label;
 import org.uqbar.arena.widgets.NumericField;
 import org.uqbar.arena.widgets.Panel;
 import org.uqbar.arena.widgets.TextBox;
+import org.uqbar.arena.widgets.tables.Column;
+import org.uqbar.arena.widgets.tables.Table;
 import org.uqbar.arena.windows.SimpleWindow;
 import org.uqbar.arena.windows.WindowOwner;
 
+import Model.Alumno;
 import ViewModel.*;
+import Model.Asignacion;
 
 public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	
-	  public AlumnoView(WindowOwner owner) {
-		    super(owner, new AlumnoViewModel());
+	  public AlumnoView(WindowOwner owner, Alumno alumno) {
+		    super(owner, new AlumnoViewModel(alumno) );
 		  }
 	  
 	  public void CrearVentana(){
@@ -30,26 +37,38 @@ public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	@Override
 	protected void createFormPanel(Panel mainPanel) {
 		// TODO Auto-generated method stub
-		setTitle("Datos: ");
-	    Panel panelArriba = new Panel (mainPanel);
-	    panelArriba.setLayout(new ColumnLayout(2));
-  
-	    new Label(panelArriba).setText("Codigo");	    				
-	    new NumericField(panelArriba).setWidth(150)
-	    .bindValueToProperty("alumno.code");
-	    						
-	    new Label(panelArriba).setText("Nombre");
-	    new TextBox(panelArriba).setWidth(150)
-	    			.bindValueToProperty("alumno.first_name");
-	    
-	    new Label(panelArriba).setText("Apellido");
-	    new TextBox(panelArriba).setWidth(150)
-	    					    .bindValueToProperty("alumno.last_name");
-	    
-	    new Label(panelArriba).setText("GitHub");
-	    new TextBox(panelArriba).setWidth(150)
-	    						.bindValueToProperty("alumno.github_user");
+		CheckBox checkMostrarModificar = new CheckBox(mainPanel);
+		checkMostrarModificar.bindValueToProperty("boolModificarMostrar");
 		
+		
+		setTitle("Datos: ");
+	    Panel panelModificarDatos = new Panel (mainPanel);
+	    panelModificarDatos.setLayout(new ColumnLayout(2));
+	    
+	    new Label(panelModificarDatos).setText("Codigo");	    				
+	    new NumericField(panelModificarDatos).setWidth(150)
+	    .bindValueToProperty("legajo");
+	    						
+	    new Label(panelModificarDatos).setText("Nombre");
+	    new TextBox(panelModificarDatos).setWidth(150)
+	    			.bindValueToProperty("nombre");
+	    
+	    new Label(panelModificarDatos).setText("GitHub");
+	    new TextBox(panelModificarDatos).setWidth(150)
+	    						.bindValueToProperty("git");
+	    
+	    Panel panelMostrarDatos = new Panel (mainPanel);
+	    panelMostrarDatos.setLayout(new ColumnLayout(2));
+	    
+	    /*
+	    Table<Asignacion> tableDeNotas = new Table<>(panelMostrarDatos, Asignacion.class);
+		tableDeNotas.bindItemsToProperty("asignaciones");
+		
+		Column<Asignacion> columnaConNombre = new Column<Asignacion>(tableDeNotas);
+		columnaConNombre.setTitle("Asignacion");
+		columnaConNombre.bindContentsToProperty("Asignacion.estado");
+		columnaConNombre.setFixedSize(100);
+		*/
 	}
 	
 }

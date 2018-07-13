@@ -6,8 +6,10 @@ import org.uqbar.arena.windows.Window;
 
 import View.LoginView;
 import View.ProfesorView;
+import DatosAlumno.DatosEstudiante;
 
 public class VisorDeNotas extends Application{
+	
 	public static void main(String[] args) {
 		new VisorDeNotas().start();	
 	}

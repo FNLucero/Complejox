@@ -12,12 +12,15 @@ import Model.Alumno;
 
 import org.uqbar.arena.widgets.Label;
 import org.uqbar.arena.bindings.ObservableProperty;
+import org.uqbar.arena.bindings.PropertyAdapter;
+import org.uqbar.arena.widgets.Button;
 import org.uqbar.arena.widgets.CheckBox;
 
 import ViewModel.LoginViewModel;
 import Model.*;
 
 public class LoginView extends SimpleWindow<LoginViewModel>{
+	
 	  public LoginView(WindowOwner owner) {
 		    super(owner, new LoginViewModel());
 		  }
@@ -31,21 +34,26 @@ public class LoginView extends SimpleWindow<LoginViewModel>{
 	@Override
 	protected void createFormPanel(Panel mainPanel) {
 		// TODO Auto-generated method stub
-		Label x=new Label(mainPanel).setText("ELIJA SU CLASE");
+		Label x=new Label(mainPanel).setText("¿ Quien es usted ?");
 		new Label(mainPanel).setText("                ");
 		new Label(mainPanel).setText("                ");
 		
 		Selector<Alumno> selector = new Selector<Alumno>(mainPanel);		
-		//selector.bindValueToProperty("seleccionado");
+		selector.bindValueToProperty("alumno");
 		
+		Binding<Alumno, Selector<Alumno>, ListBuilder<Alumno>> bindingItems = 
+				selector.bindItems(new ObservableProperty<Alumno>(this.getModelObject(), "alumnos"));
 		
-		/*
-		Binding<Estudiante, Selector<Estudiante>, ListBuilder<Estudiante>> bindingItems = 
-				selector.bindItems(new ObservableProperty<Estudiante>(this.getModelObject(), "estudiantes"));
-		*/
-		//checkResumen.bindEnabledToProperty("habilitaResumenCuenta");
-		//checkResumen.bindValueToProperty("recibeResumenCuenta");
+		bindingItems.setAdapter(new PropertyAdapter(Alumno.class, "nombre"));
+		
+		new Button(mainPanel).setCaption("Loguearse")
+	    .onClick(() -> new AlumnoView(this, this.getModelObject().getAlumno()).open());
+	    //.setAsDefault().disableOnError();
+		
+	}
+}	
 	
-		CheckBox Alumno = new CheckBox(mainPanel);
-	}	
-}
+	 /*public void CrearVentana(){ 		
+		 new NotasView(this,this.getModelObject().getToken()).open(); 	  }
+	}*/
+

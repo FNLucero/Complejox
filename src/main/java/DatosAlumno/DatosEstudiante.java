@@ -18,26 +18,41 @@ public class DatosEstudiante {
 	private void cargarAlumnos() {
 		
 		Alumno ricardo = new Alumno("richard rodriguez",2585,"ricardito2582");
-		NotaNumerica nota = null;
-		nota.setResultado(8);
-		Tarea parcial=new Tarea();
-		parcial.setNombre("Parcial");
-		parcial.setNota(nota);
+		NotaNumerica notaRicardo = new NotaNumerica();
+		notaRicardo.setResultado(8);
 		
-		Asignacion evaluacion=new Asignacion(parcial);
+		Tarea parcialRicardo = new Tarea();
+		parcialRicardo.setNombre("Parcial");
+		parcialRicardo.setNota(notaRicardo);
 		
-	
+		Asignacion evaluacionRicardo = new Asignacion(parcialRicardo);
 		
-		Alumno miguel = new Alumno("miguel Richardson", 8525, "elMIGUELON");
+		ricardo.asignarTarea(evaluacionRicardo);
 		
 		alumnos.add(ricardo);
+		
+		//------ otro alumno --------
+		
+		Alumno miguel = new Alumno("miguel Richardson", 8525, "elMIGUELON");
+		NotaNumerica notaMiguel = new NotaNumerica();
+		notaMiguel.setResultado(8);
+		
+		Tarea parcialMiguel = new Tarea();
+		parcialMiguel.setNombre("Parcial");
+		parcialMiguel.setNota(notaMiguel);
+		
+		Asignacion evaluacionMiguel = new Asignacion(parcialMiguel);
+		
+		ricardo.asignarTarea(evaluacionMiguel);
+		
+		alumnos.add(miguel);
 	}
 	
 	public static DatosEstudiante getInstancia() {
 		return estudiantesDatos;
 	}
 	
-	public List<Alumno> getEstudiantes() {
+	public List<Alumno> getAlumnos() {
 		return alumnos;
 	}
 }

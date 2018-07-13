@@ -1,5 +1,8 @@
 package Model;
 
+import org.uqbar.commons.model.annotations.Observable;
+
+@Observable
 public class Asignacion {
 
 	private Tarea tipoTarea;

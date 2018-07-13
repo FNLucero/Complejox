@@ -3,8 +3,10 @@ package Model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.uqbar.commons.model.annotations.Observable;
 
 
+@Observable
 public class Alumno {
 	private List<Asignacion> asignaciones;
 	private String nombre;
@@ -36,6 +38,10 @@ public class Alumno {
 
 	public int getLegajo() {
 		return legajo;
+	}
+	
+	public String getGit() {
+		return git;
 	}
 
 	public void setLegajo(int legajo) {

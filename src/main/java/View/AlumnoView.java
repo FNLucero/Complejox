@@ -18,9 +18,8 @@ import org.uqbar.commons.model.annotations.Observable;
 import Model.Alumno;
 import ViewModel.*;
 import Model.Asignacion;
-//@Observable
+
 public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
-	
 	  public AlumnoView(WindowOwner owner, Alumno alumno) {
 		    super(owner, new AlumnoViewModel(alumno) );
 		  }
@@ -64,7 +63,7 @@ public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	    
 
 	    new Button(mainPanel).setCaption("Modificar Datos")
-	    .onClick(() -> new ModificarView(this, this.getModelObject().getAlumno()).open());
+	    .onClick(() -> new ModificarView(this, this.getModelObject().getAlumno() ).open());
 	    
 	    new Button(mainPanel).setCaption("Consultar Notas").onClick(()-> new NotasView(this, this.getModelObject().getAlumno()).open());
 	    

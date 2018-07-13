@@ -12,6 +12,7 @@ public class ModificarViewModel {
 	
 	public ModificarViewModel(Alumno alumno) {
 		this.alumno = alumno;
+		System.out.println(alumno.getNombre());
 	}
 
 	public void setValor(String valor) {
@@ -28,7 +29,7 @@ public class ModificarViewModel {
 	}
 	
 	public void  ModificarGit() {
-		this.alumno.setgit(valor);;
+		this.alumno.setgit(valor);
 	}
 	
 	public void ModificarLegajo() {

@@ -42,4 +42,9 @@ public class Asignacion {
 	public boolean getEstaAprobado() {
 		return estaAprobado;
 	}
+	
+	@Override
+	public String toString() {
+		return tipoTarea.getNombre() + " Nota: " + tipoTarea.getNota().getResultado();
+	}
 }

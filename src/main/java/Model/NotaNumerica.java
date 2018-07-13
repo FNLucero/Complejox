@@ -12,7 +12,9 @@ public class NotaNumerica implements TipoNota {
 		this.resultado = resultado;
 	}
 
-
+	public int getResultado() {
+		return resultado ;
+	}
 
 
 	@Override

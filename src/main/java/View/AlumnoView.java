@@ -63,8 +63,10 @@ public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	    labelCodigo.bindVisibleToProperty("visible");
 	    labelGit.bindVisibleToProperty("visible");
 	    
-	    new Button(mainPanel).setCaption("Modificar Datos")
-	    .onClick(() -> new ModificarView(this, this.getModelObject().getAlumno() , this.getModelObject() ).open());
+	    new Button(mainPanel).setCaption("Modificar Datos").onClick(() -> new ModificarView(this, this.getModelObject().getAlumno() , this.getModelObject() ).open());	    
+	    
+	    new Button(mainPanel).setCaption("Consultar Notas").onClick(()-> new NotasView(this, this.getModelObject().getAlumno() ).open());
+	   
 	
 	}
 	

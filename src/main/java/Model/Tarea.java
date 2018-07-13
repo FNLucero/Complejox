@@ -4,10 +4,6 @@ public class Tarea {
 	private String nombre;
 	private TipoNota nota;
 	
-	public String getNombre() {
-		return nombre;
-	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -18,5 +14,9 @@ public class Tarea {
 
 	public void setNota(TipoNota nota) {
 		this.nota = nota;
+	}
+	
+	public String getNombre() {
+		return nombre;
 	}
 }

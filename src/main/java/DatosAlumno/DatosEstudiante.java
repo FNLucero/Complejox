@@ -19,10 +19,10 @@ public class DatosEstudiante {
 		
 		Alumno ricardo = new Alumno("richard rodriguez",2585,"ricardito2582");
 		NotaNumerica notaRicardo = new NotaNumerica();
-		notaRicardo.setResultado(8);
+		notaRicardo.setResultado(6);
 		
 		Tarea parcialRicardo = new Tarea();
-		parcialRicardo.setNombre("Parcial");
+		parcialRicardo.setNombre("Parcial Quimica");
 		parcialRicardo.setNota(notaRicardo);
 		
 		Asignacion evaluacionRicardo = new Asignacion(parcialRicardo);
@@ -33,12 +33,12 @@ public class DatosEstudiante {
 		
 		//------ otro alumno --------
 		
-		Alumno miguel = new Alumno("miguel Richardson", 8525, "elMIGUELON");
+		Alumno miguel = new Alumno("Facundo Fraguaga", 8525, "PapuDePapus");
 		NotaNumerica notaMiguel = new NotaNumerica();
 		notaMiguel.setResultado(8);
 		
 		Tarea parcialMiguel = new Tarea();
-		parcialMiguel.setNombre("Parcial");
+		parcialMiguel.setNombre("Parcial Diseño de Sistemas");
 		parcialMiguel.setNota(notaMiguel);
 		
 		Asignacion evaluacionMiguel = new Asignacion(parcialMiguel);

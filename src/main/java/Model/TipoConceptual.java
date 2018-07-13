@@ -15,4 +15,9 @@ public class TipoConceptual implements TipoNota {
 	public boolean estaAprobada() {
 		return this.resultado >= Conceptos.B.ordinal();
 	}
+
+	public int getResultado() {
+		return resultado;
+	}
+	
 }

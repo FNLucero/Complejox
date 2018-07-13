@@ -20,4 +20,11 @@ public class NotaNumerica implements TipoNota {
 		return this.resultado >= NOTA_MINIMA;
 	}
 
+
+
+
+	public int getResultado() {
+		return resultado;
+	}
+
 }

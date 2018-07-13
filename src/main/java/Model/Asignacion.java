@@ -4,7 +4,8 @@ import org.uqbar.commons.model.annotations.Observable;
 
 @Observable
 public class Asignacion {
-
+	
+	
 	private Tarea tipoTarea;
 	private boolean estaAprobado;
 	private boolean estado; // corregido = true, pendiente = false

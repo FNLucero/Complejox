@@ -43,6 +43,10 @@ public class Alumno {
 	public String getGit() {
 		return git;
 	}
+	
+	public void setgit(String git) {
+		this.git =  git;
+	}
 
 	public void setLegajo(int legajo) {
 		this.legajo = legajo;

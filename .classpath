@@ -6,7 +6,7 @@
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="var" path="M2_REPO/junit/junit/4.4/junit-4.4.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/uqbar-project/arena-jface/3.6.3/arena-jface-3.6.3.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/uqbar-project/arena-core/3.6.3/arena-core-3.6.3.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/uqbar-project/arena-core/3.6.3/arena-core-3.6.3.jar" sourcepath="M2_REPO/org/uqbar-project/arena-core/3.6.3/arena-core-3.6.3-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/uqbar-project/arena-pot/3.6.3/arena-pot-3.6.3.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/uqbar-project/arena-apo/3.6.3/arena-apo-3.6.3.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/uqbar-project/uqbar-domain/3.6.3/uqbar-domain-3.6.3.jar"/>

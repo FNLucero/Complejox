@@ -7,6 +7,15 @@ public class Asignacion {
 	
 	
 	private Tarea tipoTarea;
+	
+	public Tarea getTipoTarea() {
+		return tipoTarea;
+	}
+
+	public void setTipoTarea(Tarea tipoTarea) {
+		this.tipoTarea = tipoTarea;
+	}
+
 	private boolean estaAprobado;
 	private boolean estado; // corregido = true, pendiente = false
 

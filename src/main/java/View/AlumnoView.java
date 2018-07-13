@@ -66,6 +66,8 @@ public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	    new Button(mainPanel).setCaption("Modificar Datos")
 	    .onClick(() -> new ModificarView(this, this.getModelObject().getAlumno()).open());
 	    
+	    new Button(mainPanel).setCaption("Consultar Notas").onClick(()-> new NotasView(this, this.getModelObject().getAlumno()).open());
+	    
 	    /*
 	    Table<Asignacion> tableDeNotas = new Table<>(panelMostrarDatos, Asignacion.class);
 		tableDeNotas.bindItemsToProperty("asignaciones");

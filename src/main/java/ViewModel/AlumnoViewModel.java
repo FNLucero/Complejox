@@ -18,6 +18,8 @@ public class AlumnoViewModel {
 	private List<Asignacion> asignaciones;
 	private boolean boolModificarMostrar;  
 	
+	private boolean visible;
+
 	public AlumnoViewModel(Alumno alumno) {
 		this.alumno = alumno;
 		this.inicializarAlumno(alumno);
@@ -31,7 +33,7 @@ public class AlumnoViewModel {
 		this.alumno = alumno;
 	}
 	
-	private void inicializarAlumno (Alumno alumno) {
+	public void inicializarAlumno (Alumno alumno) {
 		this.nombre = alumno.getNombre();
 		this.legajo = alumno.getLegajo();
 		this.git = alumno.getGit();
@@ -77,7 +79,15 @@ public class AlumnoViewModel {
 	public void setBoolModificarMostrar(boolean boolModificarMostrar) {
 		this.boolModificarMostrar = boolModificarMostrar;
 	}
-	
+
+	public boolean isVisible() {
+		return visible;
+	}
+
+	public void setVisible(boolean visible) {
+		this.visible = visible;
+	}
+
 	
 	
 }

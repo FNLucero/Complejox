@@ -10,7 +10,7 @@ import org.uqbar.commons.model.annotations.Observable;
 public class Alumno {
 	private List<Asignacion> asignaciones;
 	private String nombre;
-	private int legajo;
+	private Integer legajo;
 	private String git;
 	
 	public Alumno(String nombre,int legajo,String git) {

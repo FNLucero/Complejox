@@ -17,17 +17,13 @@ import org.uqbar.commons.model.annotations.Observable;
 
 import Model.Alumno;
 import ViewModel.*;
-import Model.Asignacion;
+
 //@Observable
 public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	
 	  public AlumnoView(WindowOwner owner, Alumno alumno) {
 		    super(owner, new AlumnoViewModel(alumno) );
 		  }
-	  
-	  public void CrearVentana(){
-		// new NotasView(this,this.getModelObject().getToken()).open();
-	  }
 	  
 	  
 	@Override
@@ -38,42 +34,37 @@ public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 
 	@Override
 	protected void createFormPanel(Panel mainPanel) {
-		// TODO Auto-generated method stub
-		CheckBox checkMostrarModificar = new CheckBox(mainPanel);
-		checkMostrarModificar.bindValueToProperty("boolModificarMostrar");
 		
+		new Label(mainPanel).setText("Marque si desea ver los datos del alumno ");
+		
+		CheckBox checkMostrarModificar = new CheckBox(mainPanel);
+		checkMostrarModificar.bindValueToProperty("visible");
 		
 		setTitle("Datos: ");
-	    Panel panelModificarDatos = new Panel (mainPanel);
-	    panelModificarDatos.setLayout(new ColumnLayout(2));
+	    Panel panelDatos = new Panel (mainPanel);
+	    panelDatos.setLayout(new ColumnLayout(2));
 	    
-	    new Label(panelModificarDatos).setText("Codigo");	    				
-	    new NumericField(panelModificarDatos).setWidth(150)
-	    .bindValueToProperty("legajo");
+	    Label labelCodigo = new Label(panelDatos).setText("Legajo");	    				
+	    TextBox TextBoxCodigo = new NumericField(panelDatos);
+	    TextBoxCodigo.setWidth(150).bindValueToProperty("legajo");
+	    TextBoxCodigo.bindVisibleToProperty("visible");
 	    						
-	    new Label(panelModificarDatos).setText("Nombre");
-	    new TextBox(panelModificarDatos).setWidth(150)
-	    			.bindValueToProperty("nombre");
+	    Label labelNombre = new Label(panelDatos).setText("Nombre");
+	    TextBox TextBoxNombre = new TextBox(panelDatos);
+	    TextBoxNombre.setWidth(150).bindValueToProperty("nombre");
+	    TextBoxNombre.bindVisibleToProperty("visible");
 	    
-	    new Label(panelModificarDatos).setText("GitHub");
-	    new TextBox(panelModificarDatos).setWidth(150)
-	    						.bindValueToProperty("git");
+	    Label labelGit = new Label(panelDatos).setText("GitHub");
+	    TextBox TextBoxGit = new TextBox(panelDatos);
+	    TextBoxGit.setWidth(150).bindValueToProperty("git");
+	    TextBoxGit.bindVisibleToProperty("visible");
 	    
-	    Panel panelMostrarDatos = new Panel (mainPanel);
-	    panelMostrarDatos.setLayout(new ColumnLayout(2));
+	    labelNombre.bindVisibleToProperty("visible");
+	    labelCodigo.bindVisibleToProperty("visible");
+	    labelGit.bindVisibleToProperty("visible");
 	    
-
 	    new Button(mainPanel).setCaption("Modificar Datos")
-	    .onClick(() -> new ModificarView(this, this.getModelObject().getAlumno()).open());
-	    
-	    /*
-	    Table<Asignacion> tableDeNotas = new Table<>(panelMostrarDatos, Asignacion.class);
-		tableDeNotas.bindItemsToProperty("asignaciones");
-		
-		Column<Asignacion> columnaConNombre = new Column<Asignacion>(tableDeNotas);
-		columnaConNombre.setTitle("Asignacion");
-		columnaConNombre.bindContentsToProperty("Asignacion.tipoTarea.nombre");
-		columnaConNombre.setFixedSize(100);*/
+	    .onClick(() -> new ModificarView(this, this.getModelObject().getAlumno() , this.getModelObject() ).open());
 	
 	}
 	

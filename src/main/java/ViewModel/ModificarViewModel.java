@@ -8,10 +8,11 @@ import Model.Alumno;
 public class ModificarViewModel {
 	public String valor;
 	public Alumno alumno;
+	private AlumnoViewModel ViewAnterior;
 	
-	
-	public ModificarViewModel(Alumno alumno) {
+	public ModificarViewModel(Alumno alumno , AlumnoViewModel ViewAnterior) {
 		this.alumno = alumno;
+		this.ViewAnterior = ViewAnterior;
 	}
 
 	public void setValor(String valor) {
@@ -25,14 +26,17 @@ public class ModificarViewModel {
 	
 	public void ModificarNonbre() {
 		 this.alumno.setNombre(valor);
+		 this.ViewAnterior.inicializarAlumno(alumno);
 	}
 	
 	public void  ModificarGit() {
 		this.alumno.setgit(valor);;
+		this.ViewAnterior.inicializarAlumno(alumno);
 	}
 	
 	public void ModificarLegajo() {
 		this.alumno.setLegajo( Integer.parseInt(valor) );
+		this.ViewAnterior.inicializarAlumno(alumno);
 	}
 	
 

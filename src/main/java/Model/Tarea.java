@@ -3,7 +3,7 @@ package Model;
 public class Tarea {
 	private String nombre;
 	private TipoNota nota;
-
+	
 	public String getNombre() {
 		return nombre;
 	}

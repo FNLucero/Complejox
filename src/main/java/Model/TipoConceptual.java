@@ -3,9 +3,13 @@ import Model.TipoNota;
 
 public class TipoConceptual implements TipoNota {
 	
-	@Override
-	public boolean estaAprobada(int resul) {
-		return resul >= Conceptos.B.ordinal();
+	int resultado;
+	public TipoConceptual(int resultado) {
+		this.resultado = resultado;
 	}
-
+	
+	@Override
+	public boolean estaAprobada() {
+		return this.resultado >= Conceptos.B.ordinal();
+	}
 }

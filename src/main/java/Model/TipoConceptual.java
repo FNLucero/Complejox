@@ -11,13 +11,15 @@ public class TipoConceptual implements TipoNota {
 		this.resultado = resultado;
 	}
 	
+	public int getResultado() {
+		return resultado ;
+	}
+	
 	@Override
 	public boolean estaAprobada() {
 		return this.resultado >= Conceptos.B.ordinal();
 	}
 
-	public int getResultado() {
-		return resultado;
-	}
+
 	
 }

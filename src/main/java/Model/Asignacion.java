@@ -8,6 +8,10 @@ public class Asignacion {
 	
 	private Tarea tipoTarea;
 
+	public Tarea getTipoTarea() {
+		return tipoTarea;
+	}
+	
 	public void setTipoTarea(Tarea tipoTarea) {
 		this.tipoTarea = tipoTarea;
 	}
@@ -39,7 +43,9 @@ public class Asignacion {
 		return estaAprobado;
 	}
 	
-	public Tarea getTipoTarea() {
-		return tipoTarea;
+	@Override
+	public String toString() {
+		return tipoTarea.getNombre() + " Nota: " + tipoTarea.getNota().getResultado();
+
 	}
 }

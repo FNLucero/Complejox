@@ -43,9 +43,21 @@ public class DatosEstudiante {
 		
 		Asignacion evaluacionMiguel = new Asignacion(parcialMiguel);
 		
-		ricardo.asignarTarea(evaluacionMiguel);
+		TipoConceptual notaMiguel2 = new TipoConceptual();
+		notaMiguel2.setResultado(5);
+		
+		Tarea parcialMiguel2 = new Tarea();
+		parcialMiguel2.setNombre("Parcial de Sistemas");
+		parcialMiguel2.setNota(notaMiguel2);
+		
+		Asignacion evaluacionMiguel2 = new Asignacion(parcialMiguel2);
+		
+		miguel.asignarTarea(evaluacionMiguel);
+		miguel.asignarTarea(evaluacionMiguel2);
 		
 		alumnos.add(miguel);
+		
+		
 	}
 	
 	public static DatosEstudiante getInstancia() {

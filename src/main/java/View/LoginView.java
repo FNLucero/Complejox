@@ -47,13 +47,9 @@ public class LoginView extends SimpleWindow<LoginViewModel>{
 		bindingItems.setAdapter(new PropertyAdapter(Alumno.class, "nombre"));
 		
 		new Button(mainPanel).setCaption("Loguearse")
-	    .onClick(() -> new AlumnoView(this, this.getModelObject().getAlumno()).open());
-	    //.setAsDefault().disableOnError();
+	    .onClick(() -> new AlumnoView(this, this.getModelObject().getAlumno()).open()).setAsDefault().disableOnError();
 		
 	}
 }	
 	
-	 /*public void CrearVentana(){ 		
-		 new NotasView(this,this.getModelObject().getToken()).open(); 	  }
-	}*/
 

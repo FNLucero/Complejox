@@ -18,9 +18,10 @@ import org.uqbar.commons.model.annotations.Observable;
 import Model.Alumno;
 import ViewModel.*;
 
-//@Observable
+import Model.Asignacion;
+
+
 public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
-	
 	  public AlumnoView(WindowOwner owner, Alumno alumno) {
 		    super(owner, new AlumnoViewModel(alumno) );
 		  }
@@ -59,9 +60,11 @@ public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	    TextBoxGit.setWidth(150).bindValueToProperty("git");
 	    TextBoxGit.bindVisibleToProperty("visible");
 	    
+
 	    labelNombre.bindVisibleToProperty("visible");
 	    labelCodigo.bindVisibleToProperty("visible");
 	    labelGit.bindVisibleToProperty("visible");
+
 	    
 	    new Button(mainPanel).setCaption("Modificar Datos").onClick(() -> new ModificarView(this, this.getModelObject().getAlumno() , this.getModelObject() ).open());	    
 	    

@@ -3,21 +3,21 @@ import Model.TipoNota;
 
 public class TipoConceptual implements TipoNota {
 	
-	int resultado;
+	String resultado;
 	public TipoConceptual() {
 	}
 	
-	public void setResultado(int resultado) {
+	public void setResultado(String resultado) {
 		this.resultado = resultado;
 	}
 	
-	public int getResultado() {
+	public String getResultado() {
 		return resultado ;
 	}
 	
 	@Override
 	public boolean estaAprobada() {
-		return this.resultado >= Conceptos.B.ordinal();
+		return Conceptos.aprobado(this.resultado);
 	}
 
 

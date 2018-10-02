@@ -1,5 +1,6 @@
 package Model;
 
+@Deprecated
 public class Tarea {
 	private String nombre;
 	private TipoNota nota;

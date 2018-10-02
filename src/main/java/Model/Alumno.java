@@ -5,18 +5,28 @@ import java.util.List;
 
 import org.uqbar.commons.model.annotations.Observable;
 
+import com.google.gson.annotations.SerializedName;
+
 
 @Observable
 public class Alumno {
 	private List<Asignacion> asignaciones;
+	@SerializedName("first_name")
 	private String nombre;
-	private Integer legajo;
+	@SerializedName("last_name")
+	private String apellido;
+	@SerializedName("code")
+	private int legajo;
+	@SerializedName("github_user")
 	private String git;
 	
-	public Alumno(String nombre,int legajo,String git) {
+	public Alumno() {}
+	
+	public Alumno(String nombre,int legajo,String git, String apellido) {
 		this.nombre = nombre;
 		this.legajo = legajo;
 		this.git = git;
+		this.apellido = apellido;
 		this.asignaciones = new ArrayList<Asignacion>();		
 	}
 
@@ -54,5 +64,13 @@ public class Alumno {
 
 	public void asignarTarea(Asignacion asignacion) {
 		asignaciones.add(asignacion);
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
 	}
 }

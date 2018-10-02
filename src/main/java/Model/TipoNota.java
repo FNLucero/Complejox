@@ -4,5 +4,5 @@ public interface TipoNota {
 	
 	boolean estaAprobada();
 	
-	public int getResultado() ;
+	public String getResultado() ;
 }

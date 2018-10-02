@@ -3,6 +3,7 @@ package Model;
 import org.uqbar.commons.model.annotations.Observable;
 
 @Observable
+@Deprecated
 public class Asignacion {
 	
 	

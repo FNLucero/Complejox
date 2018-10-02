@@ -1,0 +1,50 @@
+package Model;
+
+import java.util.List;
+
+import com.google.gson.annotations.SerializedName;
+
+public class AsignacionPosta {
+	
+	private int id;
+	@SerializedName("title")
+	private String titulo;
+	@SerializedName("description")
+	private String descripcion;
+	@SerializedName("grades")
+	private List<TipoNota> notas;
+	
+	public AsignacionPosta() {}
+	
+	public AsignacionPosta(int id, String titulo, String descripcion, List<TipoNota> notas) {
+		this.id = id;
+		this.titulo = titulo;
+		this.descripcion = descripcion;
+		this.notas = notas;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	public List<TipoNota> getNotas() {
+		return notas;
+	}
+	public void setNotas(List<TipoNota> notas) {
+		this.notas = notas;
+	}
+}

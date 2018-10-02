@@ -2,24 +2,24 @@ package Model;
 
 public class NotaNumerica implements TipoNota {
 	
-	int resultado;
+	String resultado;
 	private static final int NOTA_MINIMA = 6;
 	
 	
 	
 	
-	public void setResultado(int resultado) {
+	public void setResultado(String resultado) {
 		this.resultado = resultado;
 	}
 
-	public int getResultado() {
+	public String getResultado() {
 		return resultado ;
 	}
 
 
 	@Override
 	public boolean estaAprobada() {
-		return this.resultado >= NOTA_MINIMA;
+		return Integer.parseInt(this.resultado) >= NOTA_MINIMA;
 	}
 
 

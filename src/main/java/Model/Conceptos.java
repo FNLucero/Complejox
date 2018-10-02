@@ -8,13 +8,10 @@ public enum Conceptos {
 	private Conceptos(String nota) {
 		this.nota = nota;
 	}
-
-	public String getNota() {
-		return nota;
+	
+	public static boolean aprobado(String nota)
+	{
+		return Conceptos.valueOf(nota).ordinal() >= B.ordinal();
 	}
-
-	public void setNota(String nota) {
-		this.nota = nota;
-	}
-
+	
 }

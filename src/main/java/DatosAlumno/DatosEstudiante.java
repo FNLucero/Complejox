@@ -17,7 +17,7 @@ public class DatosEstudiante {
 	
 	private void cargarAlumnos() {
 		
-		Alumno ricardo = new Alumno("richard rodriguez",2585,"ricardito2582");
+		Alumno ricardo = new Alumno("richard",2585,"ricardito2582","rodriguez");
 		NotaNumerica notaRicardo = new NotaNumerica();
 		notaRicardo.setResultado(6);
 		
@@ -38,7 +38,7 @@ public class DatosEstudiante {
 		notaMiguel.setResultado(8);
 		
 		Tarea parcialMiguel = new Tarea();
-		parcialMiguel.setNombre("Parcial Diseño de Sistemas");
+		parcialMiguel.setNombre("Parcial Diseï¿½o de Sistemas");
 		parcialMiguel.setNota(notaMiguel);
 		
 		Asignacion evaluacionMiguel = new Asignacion(parcialMiguel);

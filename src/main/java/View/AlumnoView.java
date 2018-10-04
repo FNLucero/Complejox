@@ -55,6 +55,11 @@ public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	    TextBoxNombre.setWidth(150).bindValueToProperty("nombre");
 	    TextBoxNombre.bindVisibleToProperty("visible");
 	    
+	    Label labelApellido = new Label(panelDatos).setText("Apellido");
+	    TextBox TextBoxApellido = new TextBox(panelDatos);
+	    TextBoxApellido.setWidth(150).bindValueToProperty("Apellido");
+	    TextBoxApellido.bindVisibleToProperty("visible");
+	    
 	    Label labelGit = new Label(panelDatos).setText("GitHub");
 	    TextBox TextBoxGit = new TextBox(panelDatos);
 	    TextBoxGit.setWidth(150).bindValueToProperty("git");
@@ -62,6 +67,7 @@ public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	    
 
 	    labelNombre.bindVisibleToProperty("visible");
+	    labelApellido .bindVisibleToProperty("visible");
 	    labelCodigo.bindVisibleToProperty("visible");
 	    labelGit.bindVisibleToProperty("visible");
 

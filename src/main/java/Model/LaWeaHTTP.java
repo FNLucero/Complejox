@@ -1,10 +1,17 @@
 package Model;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.UniformInterfaceException;
 import com.sun.jersey.api.client.WebResource;
+
+import Model.AsignacionPosta;
 
 public class LaWeaHTTP {
 
@@ -21,15 +28,15 @@ public class LaWeaHTTP {
 		Gson gson = new Gson();
 		return gson.fromJson(respuesta.getEntity(String.class), clase);
 	}
-
+	
 	public Alumno getAlumno() {
 		WebResource w = cliente.resource(URI);
 		return armarInstancia(w, token, Alumno.class);
 	}
 
-	public AsignacionPosta getAsignaciones() {
+	public List <AsignacionPosta> getAsignaciones() {
 		WebResource w = cliente.resource(URI).path("assignments");
-		return armarInstancia(w, token, AsignacionPosta.class);
+		return armarListaAsignaciones(w, token);
 	}
 
 	public int actualizarAlumno(Alumno al) {
@@ -41,4 +48,14 @@ public class LaWeaHTTP {
 			return 1;
 		}
 	}
+	
+	public List <AsignacionPosta> armarListaAsignaciones (WebResource w, String token) {
+		
+		ClientResponse respuesta = w.header("Authorization", "Bearer " + token).get(ClientResponse.class);
+		JsonObject nuevo =(JsonObject) new JsonParser().parse(respuesta.getEntity(String.class) );//Parseo a jsonobject
+		AsignacionPosta[] tareasLocales= new Gson().fromJson(nuevo.get("assignments"), AsignacionPosta[].class);
+		
+		return Arrays.asList(tareasLocales);
+	}
+	 
 }

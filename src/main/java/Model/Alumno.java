@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName;
 
 @Observable
 public class Alumno {
-	private List<Asignacion> asignaciones;
+	private List<AsignacionPosta> asignaciones;
 	@SerializedName("first_name")
 	private String nombre;
 	@SerializedName("last_name")
@@ -19,6 +19,7 @@ public class Alumno {
 	private int legajo;
 	@SerializedName("github_user")
 	private String git;
+	private String token;
 	
 	public Alumno() {}
 	
@@ -27,14 +28,14 @@ public class Alumno {
 		this.legajo = legajo;
 		this.git = git;
 		this.apellido = apellido;
-		this.asignaciones = new ArrayList<Asignacion>();		
+		this.asignaciones = new ArrayList<AsignacionPosta>();		
 	}
 
-	public List<Asignacion> getAsignaciones() {
+	public List<AsignacionPosta> getAsignaciones() {
 		return asignaciones;
 	}
 
-	public void setAsignaciones(List<Asignacion> asignaciones) {
+	public void setAsignaciones(List<AsignacionPosta> asignaciones) {
 		this.asignaciones = asignaciones;
 	}
 
@@ -62,7 +63,7 @@ public class Alumno {
 		this.legajo = legajo;
 	}
 
-	public void asignarTarea(Asignacion asignacion) {
+	public void asignarTarea(AsignacionPosta asignacion) {
 		asignaciones.add(asignacion);
 	}
 
@@ -73,4 +74,14 @@ public class Alumno {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+	
+	
 }

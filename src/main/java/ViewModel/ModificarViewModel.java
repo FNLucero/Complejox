@@ -3,6 +3,7 @@ package ViewModel;
 import org.uqbar.commons.model.annotations.Observable;
 import org.uqbar.lacar.ui.model.Action;
 
+import Model.LaWeaHTTP;
 import Model.Alumno;
 @Observable
 public class ModificarViewModel {
@@ -29,17 +30,24 @@ public class ModificarViewModel {
 	public void ModificarNonbre() {
 		 this.alumno.setNombre(valor);
 		 this.ViewAnterior.inicializarAlumno(alumno);
+		 this.subirModificacion();
 	}
 	
 	public void  ModificarGit() {
 		this.alumno.setgit(valor);;
 		this.ViewAnterior.inicializarAlumno(alumno);
-
+		this.subirModificacion();
 	}
 	
 	public void ModificarLegajo() {
 		this.alumno.setLegajo( Integer.parseInt(valor) );
 		this.ViewAnterior.inicializarAlumno(alumno);
+		this.subirModificacion();
+	}
+	
+	private void subirModificacion() {
+		LaWeaHTTP nexoAnube = new LaWeaHTTP(alumno.getToken() ); 
+		nexoAnube.actualizarAlumno(alumno);
 	}
 	
 

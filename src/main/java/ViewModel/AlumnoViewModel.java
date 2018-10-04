@@ -6,7 +6,7 @@ import org.uqbar.commons.model.annotations.Observable;
 
 import DatosAlumno.DatosEstudiante;
 import Model.Alumno;
-import Model.Asignacion;
+import Model.AsignacionPosta;
 
 @Observable
 public class AlumnoViewModel {
@@ -15,7 +15,7 @@ public class AlumnoViewModel {
 	private String nombre;
 	private int legajo;
 	private String git;
-	private List<Asignacion> asignaciones;
+	private List<AsignacionPosta> asignaciones;
 	private boolean boolModificarMostrar;  
 	
 	private boolean visible;
@@ -64,11 +64,11 @@ public class AlumnoViewModel {
 		this.git = git;
 	}
 
-	public List<Asignacion> getAsignaciones() {
+	public List<AsignacionPosta> getAsignaciones() {
 		return asignaciones;
 	}
 
-	public void setAsignaciones(List<Asignacion> asignaciones) {
+	public void setAsignaciones(List<AsignacionPosta> asignaciones) {
 		this.asignaciones = asignaciones;
 	}
 

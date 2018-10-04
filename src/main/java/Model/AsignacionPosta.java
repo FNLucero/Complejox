@@ -2,8 +2,11 @@ package Model;
 
 import java.util.List;
 
+import org.uqbar.commons.model.annotations.Observable;
+
 import com.google.gson.annotations.SerializedName;
 
+@Observable
 public class AsignacionPosta {
 	
 	private int id;
@@ -47,4 +50,6 @@ public class AsignacionPosta {
 	public void setNotas(List<TipoNota> notas) {
 		this.notas = notas;
 	}
+	
+	
 }

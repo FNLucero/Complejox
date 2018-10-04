@@ -2,6 +2,7 @@ package View;
 
 import org.uqbar.arena.widgets.Panel;
 import org.uqbar.arena.widgets.Selector;
+import org.uqbar.arena.widgets.TextBox;
 import org.uqbar.arena.windows.SimpleWindow;
 //import org.uqbar.arena.
 import org.uqbar.arena.windows.WindowOwner;
@@ -34,10 +35,14 @@ public class LoginView extends SimpleWindow<LoginViewModel>{
 	@Override
 	protected void createFormPanel(Panel mainPanel) {
 		// TODO Auto-generated method stub
-		Label x=new Label(mainPanel).setText("¿ Quien es usted ?");
+		Label x=new Label(mainPanel).setText("escriba su token!");
 		new Label(mainPanel).setText("                ");
 		new Label(mainPanel).setText("                ");
 		
+		new TextBox(mainPanel).setWidth(150)
+		.bindValueToProperty("token");
+		
+		/*
 		Selector<Alumno> selector = new Selector<Alumno>(mainPanel);		
 		selector.bindValueToProperty("alumno");
 		
@@ -45,9 +50,11 @@ public class LoginView extends SimpleWindow<LoginViewModel>{
 				selector.bindItems(new ObservableProperty<Alumno>(this.getModelObject(), "alumnos"));
 		
 		bindingItems.setAdapter(new PropertyAdapter(Alumno.class, "nombre"));
+		*/
 		
 		new Button(mainPanel).setCaption("Loguearse")
-	    .onClick(() -> new AlumnoView(this, this.getModelObject().getAlumno()).open()).setAsDefault().disableOnError();
+	    .onClick(() ->  this.getModelObject().pedirAlumno(this));
+	    //new AlumnoView(this, this.getModelObject().getAlumno()).open()).setAsDefault().disableOnError();
 		
 	}
 }	

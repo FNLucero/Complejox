@@ -18,7 +18,7 @@ import org.uqbar.commons.model.annotations.Observable;
 import Model.Alumno;
 import ViewModel.*;
 
-import Model.Asignacion;
+import Model.AsignacionPosta;
 
 
 public class AlumnoView extends SimpleWindow<AlumnoViewModel>{

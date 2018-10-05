@@ -16,7 +16,7 @@ public class DatosEstudiante {
 	}
 	
 	private void cargarAlumnos() {
-		
+		/*
 		Alumno ricardo = new Alumno("richard",2585,"ricardito2582","rodriguez");
 		NotaNumerica notaRicardo = new NotaNumerica();
 		notaRicardo.setResultado(6);
@@ -55,7 +55,7 @@ public class DatosEstudiante {
 		miguel.asignarTarea(evaluacionMiguel);
 		miguel.asignarTarea(evaluacionMiguel2);
 		
-		alumnos.add(miguel);
+		alumnos.add(miguel);*/
 		
 		
 	}

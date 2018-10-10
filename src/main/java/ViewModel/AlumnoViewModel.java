@@ -13,6 +13,7 @@ public class AlumnoViewModel {
 	
 	private Alumno alumno;
 	private String nombre;
+	private String apellido;
 	private int legajo;
 	private String git;
 	private List<AsignacionPosta> asignaciones;
@@ -24,17 +25,31 @@ public class AlumnoViewModel {
 		this.alumno = alumno;
 		this.inicializarAlumno(alumno);
 	}
+	
 
 	public Alumno getAlumno() {
 		return alumno;
 	}
 
+
 	public void setAlumno(Alumno alumno) {
 		this.alumno = alumno;
 	}
-	
+
+
+	public String getApellido() {
+		return apellido;
+	}
+
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+
 	public void inicializarAlumno (Alumno alumno) {
 		this.nombre = alumno.getNombre();
+		this.apellido=alumno.getApellido();
 		this.legajo = alumno.getLegajo();
 		this.git = alumno.getGit();
 		this.asignaciones = alumno.getAsignaciones();

@@ -55,9 +55,10 @@ public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	    TextBoxNombre.setWidth(150).bindValueToProperty("nombre");
 	    TextBoxNombre.bindVisibleToProperty("visible");
 	    
+	    //AGREGAR
 	    Label labelApellido = new Label(panelDatos).setText("Apellido");
 	    TextBox TextBoxApellido = new TextBox(panelDatos);
-	    TextBoxApellido.setWidth(150).bindValueToProperty("Apellido");
+	    TextBoxApellido.setWidth(150).bindValueToProperty("apellido");
 	    TextBoxApellido.bindVisibleToProperty("visible");
 	    
 	    Label labelGit = new Label(panelDatos).setText("GitHub");

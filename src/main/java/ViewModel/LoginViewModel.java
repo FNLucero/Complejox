@@ -19,7 +19,16 @@ public class LoginViewModel {
 	
 	public LoginViewModel () {
 		//alumnos = new DatosEstudiante().getInstancia().getAlumnos();
+		this.token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIxMTEyMjIzMzMiLCJybmQiOiJ5SXNmZFIwN2lIR3BRRmVjYU9KT2VRPT0ifQ.9pVJGUXhrJPQ-TptNCt971l0h_1dWqWgMrHAWXJchho";
 	} 
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
 
 	public List<Alumno> getAlumnos() {
 		return alumnos;

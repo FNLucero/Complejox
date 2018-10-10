@@ -10,6 +10,7 @@ import com.google.gson.annotations.SerializedName;
 
 @Observable
 public class Alumno {
+
 	private List<AsignacionPosta> asignaciones;
 	@SerializedName("first_name")
 	private String nombre;
@@ -49,6 +50,10 @@ public class Alumno {
 
 	public int getLegajo() {
 		return legajo;
+	}
+	
+	public void setGit(String git) {
+		this.git = git;
 	}
 	
 	public String getGit() {

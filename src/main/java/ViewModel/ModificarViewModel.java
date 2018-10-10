@@ -33,6 +33,12 @@ public class ModificarViewModel {
 		 this.subirModificacion();
 	}
 	
+	public void ModificarApellido() {
+		 this.alumno.setApellido(valor);
+		 this.ViewAnterior.inicializarAlumno(alumno);
+		 this.subirModificacion();
+	}
+	
 	public void  ModificarGit() {
 		this.alumno.setgit(valor);;
 		this.ViewAnterior.inicializarAlumno(alumno);

@@ -47,8 +47,7 @@ public class NotasView extends SimpleWindow<NotasViewModel> {
 			    Table<TipoNota> tableNotas = new Table<TipoNota>(formPanel, TipoNota.class);
 			    tableNotas.setHeight(500);
 			    tableNotas.setWidth(350);
-			    tableNotas.bindItemsToProperty("asignacion.grades");
-			    
+			    tableNotas.bindItemsToProperty("asignacion.notas");
 			    
 			    new Column<TipoNota>(tableNotas) 
 			    .setTitle("Intento numero:")
@@ -59,17 +58,7 @@ public class NotasView extends SimpleWindow<NotasViewModel> {
 			    .setTitle("Nota")
 			    .setFixedSize(100)
 			    .bindContentsToProperty("value");
-			    
-			    new Column<TipoNota>(tableNotas) 
-			    .setTitle("Fecha")
-			    .setFixedSize(150)
-			    .bindContentsToProperty("created_at");
-			    
-			    new Column<TipoNota>(tableNotas) 
-			    .setTitle("Fecha de subida")
-			    .setFixedSize(150)
-			    .bindContentsToProperty("updated_at");
-			    
+			   
 			    new Column<TipoNota>(tableNotas) 
 			    .setTitle("Estado")
 			    .setFixedSize(150)

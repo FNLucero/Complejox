@@ -41,6 +41,9 @@ public class ModificarView extends SimpleWindow<ModificarViewModel>{
 		    new Button(mainPanel).setCaption("Modificar Nombre")
 		    .onClick(()->this.getModelObject().ModificarNonbre());
 		    
+		    new Button(mainPanel).setCaption("Modificar Apellido")
+		    .onClick(()->this.getModelObject().ModificarApellido());
+		    
 		    new Button(mainPanel).setCaption("Modificar Legajo")
 		    .onClick(()->this.getModelObject().ModificarLegajo());
 		    

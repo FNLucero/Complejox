@@ -1,8 +1,12 @@
 package Model;
 
 import java.util.List;
+
+import org.uqbar.commons.model.annotations.Observable;
+
 import java.util.Arrays;
 
+@Observable
 public class TipoNota {
 	private int id;
 	private String value;

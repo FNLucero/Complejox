@@ -17,7 +17,7 @@ public class Alumno {
 	@SerializedName("last_name")
 	private String apellido;
 	@SerializedName("code")
-	private int legajo;
+	private Integer legajo;
 	@SerializedName("github_user")
 	private String git;
 	private String token;
@@ -48,7 +48,7 @@ public class Alumno {
 		this.nombre = nombre;
 	}
 
-	public int getLegajo() {
+	public Integer getLegajo() {
 		return legajo;
 	}
 	
@@ -64,7 +64,7 @@ public class Alumno {
 		this.git =  git;
 	}
 
-	public void setLegajo(int legajo) {
+	public void setLegajo(Integer legajo) {
 		this.legajo = legajo;
 	}
 

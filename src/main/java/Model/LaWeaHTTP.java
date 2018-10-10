@@ -3,6 +3,9 @@ package Model;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.ws.rs.core.MediaType;
+
+import com.google.common.net.HttpHeaders;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -40,14 +43,23 @@ public class LaWeaHTTP {
 	}
 
 	public int actualizarAlumno(Alumno al) {
+		
+    	String input = "{"
+				+ "\"code\":	\""	+ al.getLegajo().toString()	+ "\","
+				+ "\"first_name\":	\"" + al.getNombre() + "\","
+				+ "\"last_name\":	\"" + al.getApellido() + "\","
+				+ "\"github_user\":	\"" + al.getGit() + "\""
+				+ "}";
+		
 		WebResource w = cliente.resource(URI);
 		try {
-			w.header("Authorization", "Bearer " + token).put(al);
+			w.header("Authorization", "Bearer " + token).put(ClientResponse.class, input);
 			return 0;
 		} catch (UniformInterfaceException e) {
 			return 1;
 		}
 	}
+
 	
 	public List <AsignacionPosta> armarListaAsignaciones (WebResource w, String token) {
 		

@@ -14,7 +14,7 @@ public class AlumnoViewModel {
 	private Alumno alumno;
 	private String nombre;
 	private String apellido;
-	private int legajo;
+	private Integer legajo;
 	private String git;
 	private List<AsignacionPosta> asignaciones;
 	private boolean boolModificarMostrar;  
@@ -63,11 +63,11 @@ public class AlumnoViewModel {
 		this.nombre = nombre;
 	}
 
-	public int getLegajo() {
+	public Integer getLegajo() {
 		return legajo;
 	}
 
-	public void setLegajo(int legajo) {
+	public void setLegajo(Integer legajo) {
 		this.legajo = legajo;
 	}
 

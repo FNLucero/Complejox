@@ -19,8 +19,37 @@ public class NotasViewModel {
 		
 	}
 
+	
+	
 	public List<AsignacionPosta> getAsignacionPosta() {
 		LaWeaHTTP nexoAnube = new LaWeaHTTP(alumno.getToken() ); 
 		return nexoAnube.getAsignaciones();
 	}
+
+
+
+	public Alumno getAlumno() {
+		return alumno;
+	}
+
+
+
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
+	}
+
+
+
+	public AsignacionPosta getAsignacion() {
+		return asignacion;
+	}
+
+
+
+	public void setAsignacion(AsignacionPosta asignacion) {
+		this.asignacion = asignacion;
+	}
+	
+	
+	
 }

@@ -41,15 +41,5 @@ public class TipoNota {
 	public boolean aprobo() {
 		List<String> notasAprobadas = Arrays.asList ("MB+","MB","MB-","B+","B","B-","R+","R","R-","10","9","8","7","6");
 		return notasAprobadas.contains(value);
-	}
-
-	public Aprobacion getAprobado() {
-		return (this.aprobo() ) ? Aprobacion.Aprobado : Aprobacion.Desaprobado;
-	}
-	
-	public enum Aprobacion{
-		Aprobado,Desaprobado
-	}
-	
-	
+	}	
 }

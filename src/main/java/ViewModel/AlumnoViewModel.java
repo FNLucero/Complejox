@@ -6,7 +6,10 @@ import org.uqbar.commons.model.annotations.Observable;
 
 import DatosAlumno.DatosEstudiante;
 import Model.Alumno;
-import Model.AsignacionPosta;
+import Model.Asignacion;
+import Model.ClienteHTTP;
+import View.AlumnoView;
+import View.ConfirmacionView;
 
 @Observable
 public class AlumnoViewModel {
@@ -15,8 +18,8 @@ public class AlumnoViewModel {
 	private String nombre;
 	private String apellido;
 	private Integer legajo;
-	private String git;
-	private List<AsignacionPosta> asignaciones;
+	private String github;
+	private List<Asignacion> asignaciones;
 	private boolean boolModificarMostrar;  
 	
 	private boolean visible;
@@ -51,8 +54,19 @@ public class AlumnoViewModel {
 		this.nombre = alumno.getNombre();
 		this.apellido=alumno.getApellido();
 		this.legajo = alumno.getLegajo();
-		this.git = alumno.getGit();
+		this.github = alumno.getGithub();
 		this.asignaciones = alumno.getAsignaciones();
+	}
+	
+	public void modificarAlumno(AlumnoView vista) {
+		alumno.setNombre(nombre);	
+		alumno.setApellido(apellido);	
+		alumno.setGithub(github);
+		alumno.setLegajo(legajo);
+		
+		
+		subirModificacion();
+		new ConfirmacionView(vista).open();
 	}
 
 	public String getNombre() {
@@ -71,19 +85,19 @@ public class AlumnoViewModel {
 		this.legajo = legajo;
 	}
 
-	public String getGit() {
-		return git;
+	public String getGithub() {
+		return github;
 	}
 
-	public void setGit(String git) {
-		this.git = git;
+	public void setGithub(String git) {
+		this.github = git;
 	}
 
-	public List<AsignacionPosta> getAsignaciones() {
+	public List<Asignacion> getAsignaciones() {
 		return asignaciones;
 	}
 
-	public void setAsignaciones(List<AsignacionPosta> asignaciones) {
+	public void setAsignaciones(List<Asignacion> asignaciones) {
 		this.asignaciones = asignaciones;
 	}
 
@@ -104,5 +118,8 @@ public class AlumnoViewModel {
 	}
 
 	
-	
+	private void subirModificacion() {
+		ClienteHTTP nexoAnube = new ClienteHTTP(alumno.getToken() ); 
+		nexoAnube.actualizarAlumno(alumno);
+	}
 }

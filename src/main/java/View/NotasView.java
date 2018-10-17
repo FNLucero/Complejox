@@ -14,10 +14,11 @@ import org.uqbar.arena.windows.WindowOwner;
 import org.uqbar.commons.model.annotations.Observable;
 
 import Model.Alumno;
-import Model.AsignacionPosta;
+import Model.Asignacion;
 import Model.TipoNota;
 import ViewModel.AlumnoViewModel;
 import ViewModel.NotasViewModel;
+
 
 public class NotasView extends SimpleWindow<NotasViewModel> {
 
@@ -30,6 +31,13 @@ public class NotasView extends SimpleWindow<NotasViewModel> {
 		// TODO Auto-generated method stub
 
 	}
+	
+	private String transformer(List<TipoNota> notas) {
+		String a = "";
+		for (TipoNota nota : notas)
+			a += nota.getValue() + "  ";
+		return a;
+	}
 
 	@Override
 
@@ -40,30 +48,28 @@ public class NotasView extends SimpleWindow<NotasViewModel> {
 		new Label(formPanel).setText("Notas de "+nombre);
 		
 
-				
-				Selector<AsignacionPosta> selector = new Selector<AsignacionPosta>(formPanel);
-				selector.bindValueToProperty("asignacion");
-				
-			    Table<TipoNota> tableNotas = new Table<TipoNota>(formPanel, TipoNota.class);
-			    tableNotas.setHeight(500);
-			    tableNotas.setWidth(350);
-			    tableNotas.bindItemsToProperty("asignacion.notas");
+				Table<Asignacion> tableNotas = new Table<>(formPanel, Asignacion.class);
+				tableNotas.setHeight(300);
+				tableNotas.bindItemsToProperty("asignacion");
 			    
-			    new Column<TipoNota>(tableNotas) 
-			    .setTitle("Intento numero:")
-			    .setFixedSize(100)
-			    .bindContentsToProperty("id");
-			    
-			    new Column<TipoNota>(tableNotas) 
-			    .setTitle("Nota")
-			    .setFixedSize(100)
-			    .bindContentsToProperty("value");
-			   
-			    new Column<TipoNota>(tableNotas) 
-			    .setTitle("Estado")
-			    .setFixedSize(150)
-			    .bindContentsToProperty("aprobo");
 
+				Column<Asignacion> columnaNombre =new Column<Asignacion>(tableNotas);
+				columnaNombre.setTitle("Tarea:");
+				columnaNombre.bindContentsToProperty("titulo");
+				columnaNombre.setFixedSize(100);
+				
+				
+				Column<Asignacion> columnaNota = new Column<Asignacion>(tableNotas);
+				columnaNota.setTitle("Notas");
+				columnaNota.bindContentsToProperty("notas").setTransformer(notas -> transformer((List<TipoNota>) notas));;
+				columnaNota.setFixedSize(200);
+			    
+
+				Column<Asignacion> columnaAprobada = new Column<Asignacion>(tableNotas);
+				columnaAprobada.setTitle("Aprobado");
+				columnaAprobada.bindContentsToProperty("estaAprobado");
+				columnaAprobada.setFixedSize(100);
+				
 			}
 	}
 

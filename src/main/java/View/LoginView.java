@@ -42,19 +42,11 @@ public class LoginView extends SimpleWindow<LoginViewModel>{
 		new TextBox(mainPanel).setWidth(150)
 		.bindValueToProperty("token");
 		
-		/*
-		Selector<Alumno> selector = new Selector<Alumno>(mainPanel);		
-		selector.bindValueToProperty("alumno");
-		
-		Binding<Alumno, Selector<Alumno>, ListBuilder<Alumno>> bindingItems = 
-				selector.bindItems(new ObservableProperty<Alumno>(this.getModelObject(), "alumnos"));
-		
-		bindingItems.setAdapter(new PropertyAdapter(Alumno.class, "nombre"));
-		*/
-		
 		new Button(mainPanel).setCaption("Loguearse")
 	    .onClick(() ->  this.getModelObject().pedirAlumno(this));
-	    //new AlumnoView(this, this.getModelObject().getAlumno()).open()).setAsDefault().disableOnError();
+	    
+		
+		
 		
 	}
 }	

@@ -6,8 +6,10 @@ import org.uqbar.commons.model.annotations.Observable;
 
 import com.google.gson.annotations.SerializedName;
 
+import Model.TipoNota.Aprobacion;
+
 @Observable
-public class AsignacionPosta {
+public class Asignacion {
 	
 	private int id;
 	@SerializedName("title")
@@ -17,9 +19,9 @@ public class AsignacionPosta {
 	@SerializedName("grades")
 	private List<TipoNota> notas;
 	
-	public AsignacionPosta() {}
+	public Asignacion() {}
 	
-	public AsignacionPosta(int id, String titulo, String descripcion, List<TipoNota> notas) {
+	public Asignacion(int id, String titulo, String descripcion, List<TipoNota> notas) {
 		this.id = id;
 		this.titulo = titulo;
 		this.descripcion = descripcion;
@@ -50,6 +52,8 @@ public class AsignacionPosta {
 	public void setNotas(List<TipoNota> notas) {
 		this.notas = notas;
 	}
-	
+	public String estaAprobado() {
+		return (this.getNotas().stream().anyMatch( nota->nota.aprobo() ) ) ? "SI" : "NO";
+	}
 	
 }

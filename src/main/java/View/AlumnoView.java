@@ -18,7 +18,7 @@ import org.uqbar.commons.model.annotations.Observable;
 import Model.Alumno;
 import ViewModel.*;
 
-import Model.AsignacionPosta;
+import Model.Asignacion;
 
 
 public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
@@ -54,8 +54,7 @@ public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	    TextBox TextBoxNombre = new TextBox(panelDatos);
 	    TextBoxNombre.setWidth(150).bindValueToProperty("nombre");
 	    TextBoxNombre.bindVisibleToProperty("visible");
-	    
-	    //AGREGAR
+	     
 	    Label labelApellido = new Label(panelDatos).setText("Apellido");
 	    TextBox TextBoxApellido = new TextBox(panelDatos);
 	    TextBoxApellido.setWidth(150).bindValueToProperty("apellido");
@@ -63,9 +62,8 @@ public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	    
 	    Label labelGit = new Label(panelDatos).setText("GitHub");
 	    TextBox TextBoxGit = new TextBox(panelDatos);
-	    TextBoxGit.setWidth(150).bindValueToProperty("git");
+	    TextBoxGit.setWidth(150).bindValueToProperty("github");
 	    TextBoxGit.bindVisibleToProperty("visible");
-	    
 
 	    labelNombre.bindVisibleToProperty("visible");
 	    labelApellido .bindVisibleToProperty("visible");
@@ -73,10 +71,12 @@ public class AlumnoView extends SimpleWindow<AlumnoViewModel>{
 	    labelGit.bindVisibleToProperty("visible");
 
 	    
-	    new Button(mainPanel).setCaption("Modificar Datos").onClick(() -> new ModificarView(this, this.getModelObject().getAlumno() , this.getModelObject() ).open());	    
+	    new Button(mainPanel).setCaption("Modificar Datos").onClick(() ->  this.getModelObject().modificarAlumno(this) ) ;	    
 	    
 	    new Button(mainPanel).setCaption("Consultar Notas").onClick(()-> new NotasView(this, this.getModelObject().getAlumno() ).open());
-	   
+	    
+	    
+	    
 	
 	}
 	

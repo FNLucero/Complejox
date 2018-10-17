@@ -5,7 +5,7 @@ import java.util.List;
 import org.uqbar.arena.windows.WindowOwner;
 import org.uqbar.commons.model.annotations.Observable;
 
-import Model.LaWeaHTTP;
+import Model.ClienteHTTP;
 import View.AlumnoView;
 import Model.Alumno;
 import DatosAlumno.DatosEstudiante;
@@ -18,7 +18,6 @@ public class LoginViewModel {
 	private String token; 
 	
 	public LoginViewModel () {
-		//alumnos = new DatosEstudiante().getInstancia().getAlumnos();
 		this.token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIxMTEyMjIzMzMiLCJybmQiOiJ5SXNmZFIwN2lIR3BRRmVjYU9KT2VRPT0ifQ.9pVJGUXhrJPQ-TptNCt971l0h_1dWqWgMrHAWXJchho";
 	} 
 
@@ -47,7 +46,7 @@ public class LoginViewModel {
 	}
 	
 	public void pedirAlumno(WindowOwner owner) {
-		LaWeaHTTP nexoAnube = new LaWeaHTTP(token);
+		ClienteHTTP nexoAnube = new ClienteHTTP(token);
 		alumno = nexoAnube.getAlumno();
 		alumno.setToken(token);
 		new AlumnoView(owner, alumno).open();

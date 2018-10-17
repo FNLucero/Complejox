@@ -6,8 +6,6 @@ import org.uqbar.commons.model.annotations.Observable;
 
 import com.google.gson.annotations.SerializedName;
 
-import Model.TipoNota.Aprobacion;
-
 @Observable
 public class Asignacion {
 	

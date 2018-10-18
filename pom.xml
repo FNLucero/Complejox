@@ -16,6 +16,20 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <repositories>
+    <repository>
+      <id>maven.uqbar.org-releases</id>
+      <name>maven.uqbar.org-releases</name>
+      <url>http://maven.uqbar.org/releases</url>
+    </repository>
+    <repository>
+      <snapshots />
+      <id>maven.uqbar.org-snapshots</id>
+      <name>maven.uqbar.org-snapshots</name>
+      <url>http://maven.uqbar.org/snapshots</url>
+    </repository>
+  </repositories>
+         
   <dependencies>
 
 <!-- https://mvnrepository.com/artifact/junit/junit -->
@@ -69,23 +83,7 @@
                 </configuration>
             </plugin>
         </plugins>
- </build>
- 
- 
- <repositories>
-    <repository>
-      <id>maven.uqbar.org-releases</id>
-      <name>maven.uqbar.org-releases</name>
-      <url>http://maven.uqbar.org/releases</url>
-    </repository>
-    <repository>
-      <snapshots />
-      <id>maven.uqbar.org-snapshots</id>
-      <name>maven.uqbar.org-snapshots</name>
-      <url>http://maven.uqbar.org/snapshots</url>
-    </repository>
-  </repositories>
- 
+ </build> 
 
 </project>
 
